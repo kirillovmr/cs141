@@ -17,11 +17,14 @@ using Nodes = std::array<Node*, 3>;
 class Node {
 private:
     Nodes adjacent;
+    int m_neighbors[3];
     int number;
 
 public:
     void setAdjacents(Node &n0, Node &n1, Node &n2);
+    void setAdjacents(int n0, int n1, int n2);
     Nodes& getAdjacents();
+    int* getNeighbors();
     
     void setNumber(int n);
     int getNumber();
