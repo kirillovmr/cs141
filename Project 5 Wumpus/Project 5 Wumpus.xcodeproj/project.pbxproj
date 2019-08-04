@@ -10,6 +10,7 @@
 		E807B3AC22F13D4200CE2F4D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E807B3AB22F13D4200CE2F4D /* main.cpp */; };
 		E807B3B422F13D6E00CE2F4D /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E807B3B222F13D6E00CE2F4D /* Node.cpp */; };
 		E807B3B722F1430000CE2F4D /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E807B3B522F1430000CE2F4D /* Game.cpp */; };
+		E8B5814422F6482600EC805B /* StateController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8B5814222F6482600EC805B /* StateController.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		E807B3B322F13D6E00CE2F4D /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
 		E807B3B522F1430000CE2F4D /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		E807B3B622F1430000CE2F4D /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
+		E8B5814222F6482600EC805B /* StateController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StateController.cpp; sourceTree = "<group>"; };
+		E8B5814322F6482600EC805B /* StateController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = StateController.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				E807B3B322F13D6E00CE2F4D /* Node.hpp */,
 				E807B3B522F1430000CE2F4D /* Game.cpp */,
 				E807B3B622F1430000CE2F4D /* Game.hpp */,
+				E8B5814222F6482600EC805B /* StateController.cpp */,
+				E8B5814322F6482600EC805B /* StateController.hpp */,
 			);
 			path = "Project 5 Wumpus";
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				E807B3B722F1430000CE2F4D /* Game.cpp in Sources */,
 				E807B3AC22F13D4200CE2F4D /* main.cpp in Sources */,
 				E807B3B422F13D6E00CE2F4D /* Node.cpp in Sources */,
+				E8B5814422F6482600EC805B /* StateController.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,14 +12,11 @@
 #include <string>
 #include <vector>
 #include "Node.hpp"
-
-struct State {
-    int playerRoom = -1, wumpusRoom = -1, arrowRoom = -1;
-    int batRooms[2] = {-1, -1}, pitRooms[2] = {-1, -1};
-};
+#include "StateController.hpp"
 
 class Game {
 private:
+    StateController m_sc;
     Node m_rooms[20];
     State m_state;
     
@@ -38,6 +35,7 @@ public:
     std::string getRoomDescription();
     int getEmptyRoom();
     
+    void setState(State state);
     State getState();
     
     void setPlayerRoom(int r);

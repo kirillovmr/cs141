@@ -114,6 +114,10 @@ int Game::getEmptyRoom() {
     return emptyRooms[randNum];
 }
 
+void Game::setState(State state) {
+    m_state = state;
+}
+
 State Game::getState() {
     return m_state;
 }
@@ -185,19 +189,26 @@ bool Game::playerMove(int inputNum) {
     }
     setPlayerRoom(inputNum);
     
-    // Bat
-    if (getPlayerRoom() == getBatRooms()[0] || getPlayerRoom() == getBatRooms()[1]) {
-        setBatRooms(getBatRooms()[0] == getPlayerRoom() ? getBatRooms()[1] : getBatRooms()[0], getEmptyRoom());
-        setPlayerRoom(rand() % 20);
+    bool movedByBats;
+    do {
+        movedByBats = false;
         
-        cout << "Woah... you're flying! \nYou've just been transported by bats to room " << getPlayerRoom() << "." << endl;
+        // Pit
+        if (getPlayerRoom() == getPitRooms()[0] || getPlayerRoom() == getPitRooms()[1]) {
+            cout << "Aaaaaaaaahhhhhh.... \nYou fall into a pit and die." << endl;
+            exitProgram();
+        }
+        
+        // Bat
+        if (getPlayerRoom() == getBatRooms()[0] || getPlayerRoom() == getBatRooms()[1]) {
+            setBatRooms(getBatRooms()[0] == getPlayerRoom() ? getBatRooms()[1] : getBatRooms()[0], getEmptyRoom());
+            setPlayerRoom((rand() % 20) + 1);
+            movedByBats = true;
+            
+            cout << "Woah... you're flying! \nYou've just been transported by bats to room " << getPlayerRoom() << "." << endl;
+        }
     }
-    
-    // Pit
-    if (getPlayerRoom() == getPitRooms()[0] || getPlayerRoom() == getPitRooms()[1]) {
-        cout << "Aaaaaaaaahhhhhh.... \nYou fall into a pit and die." << endl;
-        exitProgram();
-    }
+    while (movedByBats);
     
     // Wumpus
     adj = m_rooms[getPlayerRoom()-1].getAdjacents();
@@ -218,7 +229,7 @@ bool Game::playerMove(int inputNum) {
     }
     
     // Save state to history
-    //
+    m_sc.appendState(getState());
     
     cout << endl;
     return true;
@@ -258,7 +269,7 @@ bool Game::playerShoot(vector<int> rooms) {
     setArrowRoom(arrowRoom);
     
     // Save state to history
-    //
+    m_sc.appendState(getState());
     
     cout << endl;
     return true;
@@ -283,6 +294,9 @@ void Game::init(bool restart) {
         cin >> input; cin >> input2; setPitRooms(input, input2);
         cin >> input; setArrowRoom(input);
         cin.ignore();
+        
+        // Erasing all previous states
+        m_sc.eraseAll();
     } else {
         int* randomNums = Game::getRandomNonRepeatingNumbers(0, 20, 6);
         setPlayerRoom(randomNums[0]+1);
@@ -292,7 +306,7 @@ void Game::init(bool restart) {
     }
     
     // Save state to history
-    //
+    m_sc.appendState(getState());
     
     if (restart)
         cout << endl << "\tGame was restarted!" << endl << endl;
@@ -313,6 +327,17 @@ void Game::loop() {
         inputCase = tolower(input[0]);
         
         switch (inputCase) {
+            case 'u':
+                if (m_sc.revertState()) {
+                    setState(m_sc.getState());
+                    step -= 1;
+                }
+                else {
+                    cout << "Sorry, you can't undo past the beginning of the game. Please retry." << endl;
+                }
+                cout << endl;
+            break;
+                
             case 'm':
             if ( playerMove( atoi(input.c_str()+1) ) )
                 step += 1;

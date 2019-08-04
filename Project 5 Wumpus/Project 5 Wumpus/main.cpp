@@ -1,12 +1,14 @@
-//
-//  main.cpp
-//  Project 5 Wumpus
-//
-//  Created by Viktor Kirillov on 7/30/19.
-//  Copyright © 2019 Viktor Kirillov. All rights reserved.
-//
+/* -----------------------------------------------------------
+ Project 5 Wumpus
+ 
+ Class: CS 141, Summer 2019. T,Tr 1pm lab
+ System: MacOS, Xcode 10
+ Author: Viktor Kirillov
+ 
+ Suppose that users input is perfect.
+ 
+ ----------------------------------------------------------- */
 
-#include <iostream>
 #include "Game.hpp"
 
 int main(int argc, const char * argv[]) {
