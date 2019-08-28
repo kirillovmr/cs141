@@ -54,6 +54,7 @@ int* Game::getRandomNonRepeatingNumbers(int rangeFrom, int rangeTo, int howMany)
     srand(static_cast<unsigned int>(time(0)));
     
     int* random = new int[howMany];
+
     for (int i=0; i<howMany; i++) {
         int randNum = rand() % (totalNum-i);
         random[i] = numbers[randNum];
