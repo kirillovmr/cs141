@@ -67,9 +67,123 @@ long binarySearch(string searchWord, vector<string> &dictionary) {
     return -1;
 }
 
+bool checkDiffByLetters(string word1, string word2) {
+	if (word1 == word2)
+		return false;
+	
+	if (word1.size() != word2.size())
+		return false;
+	
+	int err=0;
+	for (int i=0; i<word1.size(); i++) {
+		if (word1[i] != word2[i])
+			err += 1;
+		
+		if (err > 1)
+			return false;
+	}
+	return true;
+}
+
+void playGame(string &startWord, string &endWord, vector<string> &dictionary) {
+	int i = 1;
+	string input, currentWord;
+	currentWord = startWord;
+	
+	cin.ignore();
+	while (currentWord != endWord) {
+		cout << i << ". Previous word is '" << currentWord << "'. Next word: ";
+		getline(cin, input);
+		
+		// Check input word
+		if (input.length() == currentWord.length())
+			if (binarySearch(input, dictionary) != -1)
+				if (checkDiffByLetters(currentWord, input)) {
+					currentWord = input;
+					i += 1;
+				}
+	}
+	cout << "Congratulations, you did it!" << endl;
+}
+
+bool existsInVector(string word, vector<string> &vect) {
+	for (auto w : vect)
+		if (w == word) {
+			return true;
+		}
+	return false;
+}
+
+void findEndWord(string startWord, string endWord, vector<string> &dictionary, vector<string> &path, bool debug = false) {
+	
+	vector<string> stack, wordsSameSize;
+	vector<unsigned long*> endPointsVec;
+	stack.push_back(startWord);
+	bool found = false;
+	
+	int i = 0;
+	unsigned long startPoint, endPoint;
+	
+	while (i < stack.size()) {
+		wordsSameSize.clear();
+		
+		startPoint = stack.size();
+		
+		if (debug) cout << i << ". " << stack[i] << ":\t";
+		
+		// Going through dictionary
+		for (int j=0; j<dictionary.size(); j++)
+			// Creating vector of words that work for us
+			if (checkDiffByLetters(dictionary[j], stack[i]))
+				wordsSameSize.push_back(dictionary[j]);
+		
+		// Going through list of words in order
+		for (int k=0; k<wordsSameSize[0].size(); k++) { // k < size of word
+			for (int j=0; j<wordsSameSize.size(); j++) { // going through vector
+				if (wordsSameSize[j][k] != stack[i][k]) {
+					if (!existsInVector(wordsSameSize[j], stack)) {
+							
+						stack.push_back(wordsSameSize[j]);
+						if (debug) cout << stack.size()-1 << ":" << wordsSameSize[j] << " ";
+						
+						if (wordsSameSize[j] == endWord) {
+							cout << "\n\nWinning sequence was found!" << endl;
+							found = true;
+						}
+					}
+				}
+				if (found) break;
+			}
+			if (found) break;
+		}
+		
+		endPoint = stack.size()-1;
+//		unsigned long endPoints[2] = {startPoint, endPoint};
+		unsigned long *endPoints = new unsigned long[2]{startPoint, endPoint};
+		endPointsVec.push_back(endPoints);
+		
+		if (debug) cout << endl;
+		i += 1;
+		
+		if (found) break;
+	}
+	
+	int currentID = static_cast<int>(stack.size()-1);
+	path.clear();
+	path.push_back(to_string(currentID) + ". " + stack[currentID]);
+	
+	// Traversing vector back to find path
+	for (int j=static_cast<int>(endPointsVec.size()-1); j>=0; j--) {
+		if (currentID >= endPointsVec[j][0] && currentID <= endPointsVec[j][1]) {
+			currentID = j;
+			path.push_back(to_string(currentID) + ". " + stack[currentID]);
+		}
+	}
+}
+
 int main(int argc, const char * argv[]) {
 	
-	vector< string> dictionary;    		// Vector of dictionary words read in from file
+	vector<string> dictionary, path;    		// Vector of dictionary words read in from file
     int lengthOfWordsToUse = 3;         // Default length of word to use in word transformation
     string startWord = "dog";           // The start word for transformation
     string endWord = "cat";             // The end word for transformation
@@ -121,12 +235,42 @@ int main(int argc, const char * argv[]) {
 				getline(cin, strInput);
 				if (strInput == "r")
 					startWord = dictionary[ rand()%dictionary.size() ];
-				else {
+				else
 					if (strInput.size() == lengthOfWordsToUse)
-						startWord = strInput;
-				}
-
+						if (binarySearch(strInput, dictionary) != -1)
+							startWord = strInput;
+				
+				cout << "\nEnter ending word, or 'r' for a random word: ";
+				getline(cin, strInput);
+				if (strInput == "r")
+					endWord = dictionary[ rand()%dictionary.size() ];
+				else
+					if (strInput.size() == lengthOfWordsToUse)
+						if (binarySearch(strInput, dictionary) != -1)
+							endWord = strInput;
 				break;
+				
+			case 4:
+				playGame(startWord, endWord, dictionary);
+				break;
+				
+			case 5:
+				findEndWord(startWord, endWord, dictionary, path, true);
+				break;
+				
+			case 6:
+				findEndWord(startWord, endWord, dictionary, path);
+				break;
+				
+			case 7:
+				cout << endl;
+				for (int i=0; i<path.size(); i++)
+					cout << path[i] << endl;
+				break;
+				
+			case 8:
+				cout << "\nExiting the program\n";
+				exit(0);
 				
 			default:
 				break;
