@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		E8194876233BBE38004C0948 /* TA Program3 Work Play */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "TA Program3 Work Play"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8194879233BBE38004C0948 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E872FA8A233DD0B6003656A2 /* f1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = f1.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				E8194879233BBE38004C0948 /* main.cpp */,
+				E872FA8A233DD0B6003656A2 /* f1.cpp */,
 			);
 			path = "TA Program3 Work Play";
 			sourceTree = "<group>";
