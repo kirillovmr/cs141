@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E819487A233BBE38004C0948 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8194879233BBE38004C0948 /* main.cpp */; };
+		C67DAD5A2354E105007869BE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C67DAD592354E105007869BE /* main.cpp */; };
+		C67DAD672354E208007869BE /* Board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C67DAD652354E208007869BE /* Board.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E8194874233BBE38004C0948 /* CopyFiles */ = {
+		C67DAD542354E105007869BE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,13 +24,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E8194876233BBE38004C0948 /* TA Program3 Work Play */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "TA Program3 Work Play"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8194879233BBE38004C0948 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		E872FA8A233DD0B6003656A2 /* f1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = f1.cpp; sourceTree = "<group>"; };
+		C67DAD562354E105007869BE /* TA Program 4 Vexed */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "TA Program 4 Vexed"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C67DAD592354E105007869BE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C67DAD632354E195007869BE /* AllBoards.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AllBoards.hpp; sourceTree = "<group>"; };
+		C67DAD652354E208007869BE /* Board.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Board.cpp; sourceTree = "<group>"; };
+		C67DAD662354E208007869BE /* Board.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Board.hpp; sourceTree = "<group>"; };
+		C67DAD682354E27F007869BE /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E8194873233BBE38004C0948 /* Frameworks */ = {
+		C67DAD532354E105007869BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,66 +43,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E819486D233BBE38004C0948 = {
+		C67DAD4D2354E105007869BE = {
 			isa = PBXGroup;
 			children = (
-				E8194878233BBE38004C0948 /* TA Program3 Work Play */,
-				E8194877233BBE38004C0948 /* Products */,
+				C67DAD582354E105007869BE /* TA Program 4 Vexed */,
+				C67DAD572354E105007869BE /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E8194877233BBE38004C0948 /* Products */ = {
+		C67DAD572354E105007869BE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E8194876233BBE38004C0948 /* TA Program3 Work Play */,
+				C67DAD562354E105007869BE /* TA Program 4 Vexed */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E8194878233BBE38004C0948 /* TA Program3 Work Play */ = {
+		C67DAD582354E105007869BE /* TA Program 4 Vexed */ = {
 			isa = PBXGroup;
 			children = (
-				E8194879233BBE38004C0948 /* main.cpp */,
-				E872FA8A233DD0B6003656A2 /* f1.cpp */,
+				C67DAD592354E105007869BE /* main.cpp */,
+				C67DAD662354E208007869BE /* Board.hpp */,
+				C67DAD652354E208007869BE /* Board.cpp */,
+				C67DAD632354E195007869BE /* AllBoards.hpp */,
+				C67DAD682354E27F007869BE /* Constants.h */,
 			);
-			path = "TA Program3 Work Play";
+			path = "TA Program 4 Vexed";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E8194875233BBE38004C0948 /* TA Program3 Work Play */ = {
+		C67DAD552354E105007869BE /* TA Program 4 Vexed */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E819487D233BBE38004C0948 /* Build configuration list for PBXNativeTarget "TA Program3 Work Play" */;
+			buildConfigurationList = C67DAD5D2354E105007869BE /* Build configuration list for PBXNativeTarget "TA Program 4 Vexed" */;
 			buildPhases = (
-				E8194872233BBE38004C0948 /* Sources */,
-				E8194873233BBE38004C0948 /* Frameworks */,
-				E8194874233BBE38004C0948 /* CopyFiles */,
+				C67DAD522354E105007869BE /* Sources */,
+				C67DAD532354E105007869BE /* Frameworks */,
+				C67DAD542354E105007869BE /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "TA Program3 Work Play";
-			productName = "TA Program3 Work Play";
-			productReference = E8194876233BBE38004C0948 /* TA Program3 Work Play */;
+			name = "TA Program 4 Vexed";
+			productName = "TA Program 4 Vexed";
+			productReference = C67DAD562354E105007869BE /* TA Program 4 Vexed */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E819486E233BBE38004C0948 /* Project object */ = {
+		C67DAD4E2354E105007869BE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Viktor Kirillov";
 				TargetAttributes = {
-					E8194875233BBE38004C0948 = {
+					C67DAD552354E105007869BE = {
 						CreatedOnToolsVersion = 11.0;
 					};
 				};
 			};
-			buildConfigurationList = E8194871233BBE38004C0948 /* Build configuration list for PBXProject "TA Program3 Work Play" */;
+			buildConfigurationList = C67DAD512354E105007869BE /* Build configuration list for PBXProject "TA Program 4 Vexed" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -106,29 +113,30 @@
 				en,
 				Base,
 			);
-			mainGroup = E819486D233BBE38004C0948;
-			productRefGroup = E8194877233BBE38004C0948 /* Products */;
+			mainGroup = C67DAD4D2354E105007869BE;
+			productRefGroup = C67DAD572354E105007869BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E8194875233BBE38004C0948 /* TA Program3 Work Play */,
+				C67DAD552354E105007869BE /* TA Program 4 Vexed */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E8194872233BBE38004C0948 /* Sources */ = {
+		C67DAD522354E105007869BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E819487A233BBE38004C0948 /* main.cpp in Sources */,
+				C67DAD672354E208007869BE /* Board.cpp in Sources */,
+				C67DAD5A2354E105007869BE /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		E819487B233BBE38004C0948 /* Debug */ = {
+		C67DAD5B2354E105007869BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -178,7 +186,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -186,7 +194,7 @@
 			};
 			name = Debug;
 		};
-		E819487C233BBE38004C0948 /* Release */ = {
+		C67DAD5C2354E105007869BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -230,27 +238,25 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		E819487E233BBE38004C0948 /* Debug */ = {
+		C67DAD5E2354E105007869BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		E819487F233BBE38004C0948 /* Release */ = {
+		C67DAD5F2354E105007869BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -258,25 +264,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E8194871233BBE38004C0948 /* Build configuration list for PBXProject "TA Program3 Work Play" */ = {
+		C67DAD512354E105007869BE /* Build configuration list for PBXProject "TA Program 4 Vexed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E819487B233BBE38004C0948 /* Debug */,
-				E819487C233BBE38004C0948 /* Release */,
+				C67DAD5B2354E105007869BE /* Debug */,
+				C67DAD5C2354E105007869BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E819487D233BBE38004C0948 /* Build configuration list for PBXNativeTarget "TA Program3 Work Play" */ = {
+		C67DAD5D2354E105007869BE /* Build configuration list for PBXNativeTarget "TA Program 4 Vexed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E819487E233BBE38004C0948 /* Debug */,
-				E819487F233BBE38004C0948 /* Release */,
+				C67DAD5E2354E105007869BE /* Debug */,
+				C67DAD5F2354E105007869BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E819486E233BBE38004C0948 /* Project object */;
+	rootObject = C67DAD4E2354E105007869BE /* Project object */;
 }
